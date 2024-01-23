@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="script" href="script.js">
+    <title>Propose</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="btn  NO " onclick="changebtn('0')">
+            <p>NO</p>
+        </div>
+        <div class="rowmajor">
+            <div class="gif">
+                <img src="./video.gif" alt="giff">
+            </div>
+            <div class="row">
+                <div class="btn NO " onclick="changebtn('1')">
+                    <p>NO</p>
+                </div>
+                <div class="text">
+                    <h1>WILL YOU GO OUT ON A DATE WITH ME ?</h1>
+                </div>
+                <div class="btn NO " onclick="changebtn('2')">
+                    <p>NO</p>
+                </div>
+            </div>
+            <div class="option">
+                <div class="btn YES active" onclick="showmsg()">
+                    <p>YES</p>
+                </div>
+                <div class="btn NO active" onclick="changebtn('3')">
+                    <p>NO</p>
+                </div>
+            </div>
+        </div>
+        <div class="btn NO " onclick="changebtn('4')">
+            <p>NO</p>
+        </div>
+    </div>
+    <div class="msg">
+        <img src="./video1.gif" alt="">
+        <h2>YAY!! THANK YOU.😊</h2>
+    </div>
+    
+</body>
+<script>
+     function changebtn(btn){
+        event.currentTarget.classList.remove("active");
+        // console.log(btn);
+        var x=btn;
+        while(x==btn){
+            x=Math.round(Math.random()*(4));
+        }
+        // console.log(x);
+        var c=document.getElementsByClassName("NO");
+
+        c[x].classList.add("active");
+
+     }
+</script>
+<script>
+    function showmsg(){
+        let b=document.getElementById("container");
+        b.style.display="none";
+        let c=document.getElementsByClassName("msg");
+        c[0].style.display="flex";
+        
+
+    }
+</script>
+</html>
